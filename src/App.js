@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Employee from './components/Employee';
 import './index.css';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [employees, setEmployees] = useState([
@@ -35,7 +36,7 @@ function App() {
       <div className='flex flex-wrap' justify-center>
         {
           employees.map((employee, index) => (
-            <Employee name={employee.name} role={employee.role} image={employee.image} key={index} />
+            <Employee name={employee.name} role={employee.role} image={employee.image} key={uuidv4()} />
           ))
         }
       </div>
